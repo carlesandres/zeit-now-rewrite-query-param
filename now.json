@@ -1,0 +1,15 @@
+{
+  "name": "blah",
+  "alias": "blah",
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@now/node"
+    }
+  ],
+  "rewrites": [
+    { "source": "/api/product/:productId", "destination": "/api/product.js?productId=:productId" },
+    { "source": "/api/(.*)", "destination": "/api/$1.js" }
+  ]
+}
